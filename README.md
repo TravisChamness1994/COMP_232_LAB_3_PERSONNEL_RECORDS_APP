@@ -26,7 +26,7 @@ void delete(LIST **head, LIST **tail, void *data);
 
 You will also need to make an additional `main` function to test the `LIST` utilities.
 
-#### `add` :
+##### `add` :
 
 The goal of the `add` function is to create a new linked list node, populate it with the data provided in the `void *data`, and append it to the linked list with head (i.e. the start of the list) referenced by `LIST **head` and tail (i.e. the end of the list) referenced by `LIST **tail`.
 
@@ -35,7 +35,7 @@ The following cases must be handled:
 * The list is empty (so `head` and `tail` are `NULL`).
 * The list has at least one element (so neiter `head` nor `tail` is `NULL`).
 
-#### `delete` : 
+##### `delete` : 
 
 The goal of the `delete` function is to free the node containing the specified data pointer (and its contents), and then remove said node from the list.
 
@@ -54,7 +54,7 @@ You may wish to draw pictures of each of the cases above to determine what needs
 
 Note that whenever the list is empty, the `head` and `tail` should both be `NULL`; otherwise, the `head` is the start of the list and the `tail` is the end of the list.
 
-#### `clearRecursively`:
+##### `clearRecursively`:
 
 The goal of this function is to free every node in the list (and its content) and set the `head` and `tail` to `NULL`.
 
@@ -76,37 +76,37 @@ void clearDatabase();
 
 These functions should work as follows:
 
-#####`inputPersonalData`:
+##### `inputPersonalData`:
 * takes as input a pointer to allocated space for a `PERSON`.
 * populates the space referenced by that pointer with data gotten from `stdin` (which you've overwritten in the `main` with `freopen` to stream from `../in.txt`.
 
-#####`addPersonalDataToDatabase`:
+##### `addPersonalDataToDatabase`:
 
 * takes as input a pointer to a populated instance of the `PERSON` struct.
 * adds this pointer to the linked list referenced by the `LIST *`s `head` and `tail` in `person.c`.
 
-#####`displayDatabase`:
+##### `displayDatabase`:
 
 * goes through the linked list referenced by `head` and `tail`, calling `displayPerson` on each data pointer in the list.
 * note that this will require casting each list node's `data` field as a `PERSON *` (it is stored as a generic `void *`).
 
-#####`displayPerson`
+##### `displayPerson`
 
 * takes as input a `PERSON *`.
 * displays the referenced data.
 
-#####`findPersonInDatabase`:
+##### `findPersonInDatabase`:
 
 * takes as input a `char *`, the name of the person to be deleted.
 * finds the first occurence of a `PERSON *` stored in the linked list whose referenced name is the same as the input name and returns that `PERSON *`.
 * if no such person is in the database, returns `NULL`.
 
-#####`deletePersonFromDatabase`:
+##### `deletePersonFromDatabase`:
 
 * takes as input a `char *`, the name of the person to be deleted.
 * finds the first person in the list with that name (if one exists) and deletes them.
 
-#####`clearDatabase`:
+##### `clearDatabase`:
 
 * deletes the linked list referenced by `head` and `tail`.
 * 1-liner, use a utility defined in `list.c`.
