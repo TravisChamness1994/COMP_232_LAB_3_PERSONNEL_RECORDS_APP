@@ -10,7 +10,7 @@ The test driver in `main.c` is nearly complete. The first thing you should do is
 
 Open `in.txt`; there is the number `7`, specifying that 7 records will be entered initially, followed by 7 people's information. After these intial 7, there are 2 more people's information; these extra two exist for other tests done in the `main` function.
 
-Read through the `main` function. When you are sure that you understand what tests are being performed and where, you are ready to start working.
+Read through the `main` function alongide `in.txt` and the [sample run](#sample-run). When you are sure that you understand what tests are being performed and where, you are ready to start working.
 
 ### Linked Lists
 
@@ -112,6 +112,8 @@ These functions should work as follows:
 * 1-liner, use a utility defined in `list.c`.
 
 A sample run of the provided `main.c` (with the provided `in.txt` occupying `stdin`) and a completed project looks like:
+
+### <a name="sample-run"></a>Sample Run
 
 ```
 Enter the initial number of records:
