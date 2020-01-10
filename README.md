@@ -19,9 +19,9 @@ The skeleton of a linked list implementation is provided in `list.h` and `list.c
 Your task is to complete and test this implementation. This will require you to fill out the definitions for the following functions in `list.c`:
 
 ```c
-void add(LIST **head, LIST **tail, void *data)
-void clearRecursively(LIST **currNode, LIST **tail)
-void delete(LIST **head, LIST **tail, void *data)
+void add(LIST **head, LIST **tail, void *data);
+void clearRecursively(LIST **currNode, LIST **tail);
+void delete(LIST **head, LIST **tail, void *data);
 ```
 
 You will also need to make an additional `main` function to test the `LIST` utilities.
@@ -65,13 +65,13 @@ This is the recursive version of `clearIteratively`, which is provided.
 Once the linked list utilities are complete and tested, you are ready to move on to `person.c`, which contains skeletons for the following functions:
 
 ```c
-void inputPersonalData(PERSON *person)
-void addPersonalDataToDatabase(PERSON *person)
-void displayDatabase()
-void displayPerson(PERSON *person)
-PERSON *findPersonInDatabase(char *name)
-void removePersonFromDatabase(char *name)
-void clearDatabase()
+void inputPersonalData(PERSON *person);
+void addPersonalDataToDatabase(PERSON *person);
+void displayDatabase();
+void displayPerson(PERSON *person);
+PERSON *findPersonInDatabase(char *name);
+void removePersonFromDatabase(char *name);
+void clearDatabase();
 ```
 
 These functions should work as follows:
