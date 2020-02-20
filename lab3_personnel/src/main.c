@@ -1,3 +1,9 @@
+/**
+ * Travis Chamness
+ * Lab 3
+ * 2/19/2020
+ * */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,6 +25,7 @@ int main(void)
 
     PERSON *person;
 
+    freopen("../in.txt", "r", stdin);
     int num;
     puts("Enter the initial number of records:");
     if (scanf("%d", &num) < 1)

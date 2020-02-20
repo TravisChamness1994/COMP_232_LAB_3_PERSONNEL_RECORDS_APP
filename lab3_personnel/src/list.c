@@ -1,8 +1,28 @@
+/**
+ * Travis Chamness
+ * Lab 3
+ * 2/19/2020
+ * */
 #include "list.h"
 
 void add(LIST **head, LIST **tail, void *data)
 {
-    // TODO implement the function
+    if(*head == NULL)
+    {
+        LIST *newNode = calloc(1, sizeof(LIST));
+        newNode->data = data;
+        newNode->next = NULL;
+        *head = newNode;
+        *tail = newNode;
+    }
+    else
+        {
+            LIST *newNode = calloc(1, sizeof(LIST));
+            newNode->data = data;
+            newNode->next = *head;
+            *head = newNode;
+        }
+    // TODO implement the function - Add - Work
 }
 
 void clearIteratively(LIST **head, LIST **tail)
@@ -31,10 +51,34 @@ void clearIteratively(LIST **head, LIST **tail)
 
 void clearRecursively(LIST **currNode, LIST **tail)
 {
-    // TODO implement the function
+    
+    // TODO implement the function - clearRecursively
 }
 
 void delete(LIST **head, LIST **tail, void *data)
 {
-    // TODO implement the function
+    LIST *trailNode = NULL;
+    LIST *currNode = *head;
+
+    //list is empty, dont run
+    if(*head != NULL)
+    {
+        //If currNode get to end of List, end
+     while(currNode != NULL)
+     {
+         //if data is found, delete node.
+         if(currNode->data == data)
+         {
+             trailNode->next = currNode->next;
+             free(currNode->data);
+             free(currNode);
+         }
+         else
+             {
+             trailNode = currNode;
+             currNode = currNode->next;
+             }
+     }
+    }
+    // TODO implement the function - delete - Work
 }

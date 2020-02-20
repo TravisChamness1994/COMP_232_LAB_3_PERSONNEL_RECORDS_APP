@@ -1,3 +1,8 @@
+/**
+ * Travis Chamness
+ * Lab 3
+ * 2/19/2020
+ * */
 #include "person.h"
 
 LIST *head = NULL, *tail = NULL;
