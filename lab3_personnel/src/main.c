@@ -35,7 +35,7 @@ int main(void)
 
     while (num-- > 0)
     {
-        person = (PERSON *) malloc(sizeof(PERSON));
+        person = (PERSON *) calloc(1, sizeof(PERSON));
         inputPersonalData(person);
         addPersonalDataToDatabase(person);
     }

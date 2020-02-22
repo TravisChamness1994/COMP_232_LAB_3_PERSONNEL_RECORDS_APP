@@ -2,7 +2,7 @@
  * Travis Chamness
  * Lab 3
  * 2/19/2020
- * */
+ **/
 #include "list.h"
 
 void add(LIST **head, LIST **tail, void *data)
