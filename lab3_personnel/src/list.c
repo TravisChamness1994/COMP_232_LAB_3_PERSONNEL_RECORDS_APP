@@ -51,8 +51,17 @@ void clearIteratively(LIST **head, LIST **tail)
 
 void clearRecursively(LIST **currNode, LIST **tail)
 {
-    
-    // TODO implement the function - clearRecursively
+    if(currNode == NULL)
+        return;
+    else
+        {
+        //&(*currNode)->next steps once into dereferencing, point to locations next, then reference its own location
+            clearRecursively(&(*currNode)->next, tail);
+            free((*currNode)->data);
+            free(*currNode);
+            return;
+        }
+    // TODO implement the function - clearRecursively - Work
 }
 
 void delete(LIST **head, LIST **tail, void *data)
