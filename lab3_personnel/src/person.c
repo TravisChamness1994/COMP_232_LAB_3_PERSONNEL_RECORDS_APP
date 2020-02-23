@@ -29,7 +29,13 @@ void addPersonalDataToDatabase(PERSON *person)
 
 void displayDatabase()
 {
+    LIST *currNode = head;
 
+    while(currNode != NULL)
+    {
+        displayPerson((PERSON*)(currNode->data));
+        currNode = currNode->next;
+    }
     // TODO Implement the function - displayDatabase
     //goes through the linked list referenced by head and tail, calling displayPerson on each data pointer in the list
     //note that this will require casting each list node's data field as a PERSON* (it is stored as a generic void*)
@@ -37,21 +43,31 @@ void displayDatabase()
 
 void displayPerson(PERSON *person)
 {
+    printf("\n%s :\n      Age : %d\n      Height : %4.1f\n      Birthday : %d/%d/%d\n",person->name,person->age,person->height,person->bday.month,person->bday.day,person->bday.year);
     // TODO Implement the function - displayPerson
     // hmmmm seems familiar....
     //takes as input a PERSON*
     //displays the referenced data
 }
 
-PERSON *findPersonInDatabase(char *name)
-{
+PERSON *findPersonInDatabase(char *name) {
+    LIST *currNode = head;
+    while (currNode != NULL) {
+        if ((currNode->data) == name) {
+            return (PERSON*)currNode;
+        }
+        else
+            currNode = currNode->next;
+    }
+    //If list does not contain
+    return NULL; // if not found
+
     // TODO Implement the function - findPersonInDatabase
     //takes as input a char*, the name of the person to be deleted
     // finds the first occurence of a PERSON* stored in the linked list whose referenced name is the same as the input
     //name and returns that PERSON*
     //if no such person is in the database, return NULL.
 
-    return NULL; // if not found
 }
 
 void removePersonFromDatabase(char *name)
