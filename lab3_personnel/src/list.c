@@ -79,7 +79,20 @@ void delete(LIST **head, LIST **tail, void *data)
          //if data is found, delete node.
          if(currNode->data == data)
          {
-             trailNode->next = currNode->next;
+             //If currentNode is not at end of list
+             if(currNode == *head)
+             {
+                 *head = currNode->next;
+             }
+             else if(currNode == *tail) {
+                 //set trail to currents next
+                 trailNode->next = NULL;
+                 tail = &trailNode;
+             }
+             else
+                 {
+                    trailNode->next = currNode->next;
+                 }
              free(currNode->data);
              free(currNode);
          }
