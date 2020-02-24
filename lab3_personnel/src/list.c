@@ -52,7 +52,7 @@ void clearIteratively(LIST **head, LIST **tail)
 void clearRecursively(LIST **currNode, LIST **tail)
 {
     //if our current node is Null, we have reached the end and will now close the stack
-    if(currNode == NULL)
+    if(*currNode == NULL)
         return;
     else
         {
@@ -60,7 +60,7 @@ void clearRecursively(LIST **currNode, LIST **tail)
             clearRecursively(&(*currNode)->next, tail);
             free((*currNode)->data);
             free(*currNode);
-            return;
+            *currNode = NULL;
         }
     // TODO implement the function - clearRecursively - Work
 }
