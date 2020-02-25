@@ -95,6 +95,7 @@ void delete(LIST **head, LIST **tail, void *data)
                  }
              free(currNode->data);
              free(currNode);
+             currNode = NULL;
          }
          else
              {
